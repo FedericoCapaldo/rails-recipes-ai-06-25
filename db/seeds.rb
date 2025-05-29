@@ -7,3 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+# db/seeds.rb
+
+Recipe.destroy_all
+
+Recipe.create(name: "Guacamole", ingredients: "avocado,cilantro,lime")
+Recipe.create(name: "Ratatouille", ingredients: "eggplant,zucchini,bell pepper")
