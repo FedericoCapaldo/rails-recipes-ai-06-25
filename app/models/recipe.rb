@@ -1,5 +1,7 @@
 class Recipe < ApplicationRecord
 
+  after_save :set_content, if: -> { saved_change_to_name? || saved_change_to_ingredients? }
+
   def content
     if super.blank?
       set_content
