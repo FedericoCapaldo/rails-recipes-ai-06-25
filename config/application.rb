@@ -14,7 +14,9 @@ module RailsRecipesAi0625
       generate.helper false
       generate.test_framework :test_unit, fixture: false
     end
-    # Initialize configuration defaults for originally generated Rails version.
+    # Initialize configuration default
+    # s for originally generated Rails version.  config.mission_control.jobs.http_basic_auth_enabled = false
+
     config.load_defaults 7.1
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
@@ -29,5 +31,8 @@ module RailsRecipesAi0625
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.active_job.queue_adapter = :solid_queue
+    config.mission_control.jobs.http_basic_auth_enabled = false
+
   end
 end
